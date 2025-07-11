@@ -1,18 +1,19 @@
-@import url('https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Red+Hat+Display:ital,wght@0,300..900;1,300..900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 
 body {
   font-family: "Barlow Semi Condensed", sans-serif;
   background: radial-gradient(circle, hsl(214, 47%, 23%), hsl(237, 49%, 15%));
+  margin: 0;
+  padding: 0;
 }
 
 .main-content {
   width: 70%;
-  margin: 0.6% auto;
+  margin: 2% auto;
 }
 
 .header {
   width: 90%;
-  min-height: 100px;
   margin: 3% auto;
   display: flex;
   flex-direction: row;
@@ -39,7 +40,7 @@ body {
 
 .score-value {
   font-size: 60px;
-  font-weight: 800;
+  font-weight: 600;
   color: hsl(229, 25%, 31%);
 }
 
@@ -63,7 +64,7 @@ body {
   display: flex;
   justify-content: center;
   gap: 100px;
-  margin-bottom: 20px;
+  margin-bottom: 50px;
 }
 
 .circle-button {
@@ -76,8 +77,7 @@ body {
   position: relative;
   cursor: pointer;
   box-shadow: inset 0 8px rgba(0, 0, 0, 0.2),
-              inset 0 -8px rgba(255, 255, 255, 0.1),
-              0 8px 16px rgba(0, 0, 0, 0.3);
+    inset 0 -8px rgba(255, 255, 255, 0.1), 0 8px 16px rgba(0, 0, 0, 0.3);
   transition: transform 0.2s ease;
 }
 
@@ -132,10 +132,82 @@ body {
 }
 
 .rules-btn {
-  padding: 10px 30px;
+  padding: 10px 40px;
   text-transform: uppercase;
   border: 1px solid white;
   color: white;
   margin: 10px 50px;
-  border-radius: 6px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.rules-btn:hover {
+  background-color: hsl(214, 47%, 20%);
+}
+
+.hidden {
+  display: none !important;
+}
+
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal-wrap {
+  position: relative;
+  padding: 40px;
+  background-color: white;
+  border-radius: 10px;
+  max-width: 90%;
+  max-height: 90%;
+}
+
+.rules-image {
+  width: 100%;
+  max-width: 400px;
+  height: auto;
+  display: block;
+}
+
+.close-button {
+  position: absolute;
+  top: 10px;
+  right: 20px;
+  font-size: 40px;
+  cursor: pointer;
+  color: #666;
+  transition: color 0.2s ease;
+}
+
+.close-button:hover {
+  color: #000;
+}
+
+.row {
+  width: 90%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin: 1% auto;
+}
+
+.game-headline {
+  font-size: 20px;
+  color: white;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}  
+
+.hidden {
+  display: none;
 }

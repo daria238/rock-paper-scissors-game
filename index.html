@@ -1,61 +1,99 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
 
-  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
-  <link rel="stylesheet" href="css/style.css">
-  
-  <title>Frontend Mentor | Rock, Paper, Scissors</title>
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+    <link rel="stylesheet" href="css/style.css" />
 
-  
-  <style>
-    .attribution { font-size: 11px; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
-  </style>
-</head>
-<body>
-  <div class="main-content">
-    <div class="header">
-      <div class="game-name-text">Rock Papper Scissors</div>
-      <div class="game-score-wrap">
-        <div class="score-text">score</div>
-        <div class="score-value">12</div>
+    <title>Frontend Mentor | Rock, Paper, Scissors</title>
+
+    <style>
+      .attribution {
+        font-size: 11px;
+        text-align: center;
+      }
+      .attribution a {
+        color: hsl(228, 45%, 44%);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="main-content">
+      <div class="header">
+        <div class="game-name-text">Rock Paper Scissors</div>
+        <div class="game-score-wrap">
+          <div class="score-text">Score</div>
+          <div class="score-value">12</div>
+        </div>
+      </div>
+
+      <div id="step-one">
+        <div class="game-wrapper">
+        <div class="lines-background"></div>
+
+        <div class="circle-row">
+          <div class="circle-button blue" id="paper" onclick="trackUserChoice(this);">
+            <div class="inner-circle">
+              <img src="images/icon-paper.svg" alt="Paper" />
+            </div>
+          </div>
+          <div class="circle-button yellow" id="scissors" onclick="trackUserChoice(this);">
+            <div class="inner-circle">
+              <img src="images/icon-scissors.svg" alt="Scissors" />
+            </div>
+          </div>
+        </div>
+
+        <div class="circle-button red" id="rock" onclick="trackUserChoice(this);">
+            <div class="inner-circle">
+              <img src="images/icon-rock.svg" alt="Rock" />
+            </div>
+        </div>
+        </div>
+      </div>
+
+      <div id="step-two" class="hidden">
+        <div class="row">
+          <div class="game-headline">You Picked</div>
+          <div class="game-headline">Computer Picked</div>
+        </div>
+        <div class="row">
+          <div class="circle-row center-row" id="user-choice-div"></div>
+        </div>
+      </div>
+
+      <div id="step-three" class="hidden">
+        <div class="row">
+          <div class="game-headline">You Picked</div>
+          <div class="game-headline">Computer Picked</div>
+        </div>
+        <div class="row">
+
+        </div>
       </div>
     </div>
-    <div class="game-wrapper">
-      <div class="lines-background"></div>
-    
-      <div class="circle-row">
-        <div class="circle-button blue">
-          <div class="inner-circle">
-            <img src="images/icon-paper.svg" alt="Paper" />
-          </div>
-        </div>
-        <div class="circle-button yellow">
-          <div class="inner-circle">
-            <img src="images/icon-scissors.svg" alt="Scissors" />
-          </div>
-        </div>
-      </div>
-    
-      <div class="circle-row center-row">
-        <div class="circle-button red">
-          <div class="inner-circle">
-            <img src="images/icon-rock.svg" alt="Rock" />
-          </div>
-        </div>
+
+    <div class="button-wrapper">
+      <div id="rules-button" class="rules-btn" onclick="showRulesModal();">
+        Rules
       </div>
     </div>
-  </div>
 
-  
-  <div class="button-wrapper">
-    <div id="rules-button" class="rules-btn">rules</div>
-  </div>
+    <div id="rules-modal" class="modal hidden">
+      <div class="modal-wrap">
+        <img src="images/2rules.phg.png" />
+        <span class="close-button" onclick="hideRulesModal();">&times;</span>
+      </div>
+    </div>
 
-  <div id="rules-model" class="model hidden"></div>
-
-</body>
+    <script src="js/app.js"></script>
+  </body>
 </html>
