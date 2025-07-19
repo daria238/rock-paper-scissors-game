@@ -50,6 +50,7 @@ body {
   background-color: white;
   text-align: center;
   border-radius: 10px;
+  margin-left: 25px;
 }
 
 .game-wrapper {
@@ -206,8 +207,17 @@ body {
   color: white;
   text-transform: uppercase;
   letter-spacing: 2px;
+  margin-bottom: 5%;
 }  
 
 .hidden {
   display: none;
+}
+
+.score-row {
+  justify-content: end;
+}
+
+#step-two {  
+  margin-top: 10%;
 }
