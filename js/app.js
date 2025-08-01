@@ -83,6 +83,12 @@ function setComputerChoiceDiv() {
     innerCircleDiv.appendChild(imageIcon);
     circleButtonDiv.appendChild(innerCircleDiv);
     computerChoiceDiv.appendChild(circleButtonDiv);
+
+    pickWinner();
+
+    document.getElementById("game-outcome-wrap").style.display = "block";
+    document.getElementById("game-outcome-text").innerHTML = gameOutcome;
+    document.getElementById("play-again-button").style.display = "block";
   }, 1000);
 }
 
@@ -108,7 +114,7 @@ function makeComputerIconChoice() {
 function pickWinner() {
   if (userChoice == "rock") {
     if (computerChoice == "rock") {
-      gameOutcome = "It's a tie!";
+      gameOutcome = "It's a tie";
     } else if (computerChoice == "paper") {
       gameOutcome = "You lose";
     } else {
@@ -120,7 +126,7 @@ function pickWinner() {
     if (computerChoice == "rock") {
       gameOutcome = "You won";
     } else if (computerChoice == "paper") {
-      gameOutcome = "It's a tie!";
+      gameOutcome = "It's a tie";
     } else {
       gameOutcome = "You lost";
     }
@@ -132,7 +138,7 @@ function pickWinner() {
     } else if (computerChoice == "paper") {
       gameOutcome = "You win";
     } else {
-      gameOutcome = "It's a tie!";
+      gameOutcome = "It's a tie";
     }
   }
 }
