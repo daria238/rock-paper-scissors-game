@@ -89,6 +89,9 @@ function setComputerChoiceDiv() {
     document.getElementById("game-outcome-wrap").style.display = "block";
     document.getElementById("game-outcome-text").innerHTML = gameOutcome;
     document.getElementById("play-again-button").style.display = "block";
+
+    document.getElementById("user-score-div").innerHTML = userScore;
+    document.getElementById("computer-score-div").innerHTML = computerScore;
   }, 1000);
 }
 
@@ -117,26 +120,32 @@ function pickWinner() {
       gameOutcome = "It's a tie";
     } else if (computerChoice == "paper") {
       gameOutcome = "You lose";
+      computerScore++;
     } else {
       gameOutcome = "You win";
+      userScore++;
     }
   }
 
     else if (userChoice == "paper") {
     if (computerChoice == "rock") {
       gameOutcome = "You won";
+      userScore++;
     } else if (computerChoice == "paper") {
       gameOutcome = "It's a tie";
     } else {
       gameOutcome = "You lost";
+      computerScore++;
     }
   }
 
   else if (userChoice == "scissors") {
     if (computerChoice == "rock") {
       gameOutcome = "You lose";
+      computerScore++;
     } else if (computerChoice == "paper") {
       gameOutcome = "You win";
+      userScore++;
     } else {
       gameOutcome = "It's a tie";
     }
