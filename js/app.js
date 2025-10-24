@@ -8,6 +8,17 @@ let computerScore = 0;
 
 let gameOutcome = "";
 
+function loadScores() {
+  let storedUserScore = localStorage.getItem("user");
+  let computerUserScore = localStorage.getItem("computer");
+  if (storeUserScore == null) {
+    userScore = 0;
+  } 
+  if (storeComputerScore == null) {
+    computerScore = 0;
+  }
+}
+
 function showRulesModal() {
   document.getElementById("rules-modal").classList.remove("hidden");
 }
