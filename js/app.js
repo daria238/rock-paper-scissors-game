@@ -2,7 +2,6 @@ let userChoice;
 let userColor;
 let computerChoice
 let computerColor
-
 let userScore = 0;
 let computerScore = 0;
 
@@ -10,13 +9,20 @@ let gameOutcome = "";
 
 function loadScores() {
   let storedUserScore = localStorage.getItem("user");
-  let computerUserScore = localStorage.getItem("computer");
-  if (storeUserScore == null) {
+  let storedComputerScore = localStorage.getItem("computer");
+  if (storedUserScore == null) {
     userScore = 0;
-  } 
-  if (storeComputerScore == null) {
-    computerScore = 0;
+  } else {
+    userScore = parseInt(storedUserScore);
   }
+  if (storedComputerScore == null) {
+    computerScore = 0;
+  } else {
+    computerScore = parseInt(storedComputerScore);
+  }
+
+  alert("userScore: " + userScore);
+  alert("computerScore: " + computerScore);
 }
 
 function showRulesModal() {
